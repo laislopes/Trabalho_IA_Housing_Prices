@@ -1,27 +1,9 @@
 from flask import Flask, request, jsonify
-import pandas as pd 
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import LabelEncoder
+import pickle
 
-df = pd.read_csv("../dataset/train.csv")
-columns = ['SalePrice','MSZoning', 'LotArea', 'Street', 'Utilities', 'OverallCond', 'YearBuilt', 'FullBath', 'BedroomAbvGr', 'KitchenAbvGr', 'GarageCars', 'MSSubClass']
-df = df[columns]
-
-le = LabelEncoder()
-
-df['MSZoning'] = le.fit_transform(df['MSZoning'])
-df['Street'] = le.fit_transform(df['Street'])
-df['Utilities'] = le.fit_transform(df['Utilities'])
-
-X = df.drop(['SalePrice'], axis = 1)
-y = df['SalePrice']
-
-X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3, random_state = 4)
-
-lr_model = LinearRegression() 
-lr_model.fit(X_train, y_train)
-columns.remove('SalePrice')
+lr_model = pickle.load(open('../model/model.sav', 'rb'))
+columns = ['MSZoning', 'LotArea', 'Street', 'Utilities', 'OverallCond', 'YearBuilt', 'FullBath', 'BedroomAbvGr', 'KitchenAbvGr', 'GarageCars', 'MSSubClass']
 
 app = Flask('housing_prices')
 
