@@ -17,17 +17,7 @@ def home():
 
 @app.route('/v1/quotation', methods=['POST'])
 def quotation():
-    # mSZoning = request.form['mSZoning']
-    # lotArea = request.form['lotArea']
-    # street = request.form['street']
-    # utilities = request.form['utilities']
-    # overallCond = request.form['overallCond']
-    # yearBuilt = request.form['yearBuilt']
-    # fullBath = request.form['fullBath']
-    # bedroomAbvGr = request.form['bedroomAbvGr']
-    # kitchenAbvGr = request.form['kitchenAbvGr']
-    # garageCars = request.form['garageCars']
-
+    
     data_input = [int(request.form[col]) for col in columns]
     print(data_input)
     price = lr_model.predict([data_input])[0]
