@@ -3,7 +3,7 @@ from sklearn.linear_model import LinearRegression
 import pickle
 
 lr_model = pickle.load(open('../model/model.sav', 'rb'))
-columns = ['MSZoning', 'LotArea', 'Street', 'Utilities', 'OverallCond', 'YearBuilt', 'FullBath', 'BedroomAbvGr', 'KitchenAbvGr', 'GarageCars', 'MSSubClass']
+columns = ['MSZoning', 'LotArea', 'Street', 'Utilities', 'OverallCond', 'YearBuilt', 'FullBath', 'BedroomAbvGr', 'KitchenAbvGr', 'GarageCars']
 
 app = Flask('housing_prices')
 
@@ -17,9 +17,20 @@ def home():
 
 @app.route('/v1/quotation', methods=['POST'])
 def quotation():
-    data = request.get_json()
-    data_input = [data[col] for col in columns]
-    price = lr_model.predict([data_input])
-    return jsonify(price=price[0])
+    # mSZoning = request.form['mSZoning']
+    # lotArea = request.form['lotArea']
+    # street = request.form['street']
+    # utilities = request.form['utilities']
+    # overallCond = request.form['overallCond']
+    # yearBuilt = request.form['yearBuilt']
+    # fullBath = request.form['fullBath']
+    # bedroomAbvGr = request.form['bedroomAbvGr']
+    # kitchenAbvGr = request.form['kitchenAbvGr']
+    # garageCars = request.form['garageCars']
+
+    data_input = [int(request.form[col]) for col in columns]
+    print(data_input)
+    price = lr_model.predict([data_input])[0]
+    return render_template('price.html', price=price)
 
 app.run(debug=True)
