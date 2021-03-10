@@ -1,0 +1,70 @@
+{% extends "template.html" %}
+{% block conteudo %}
+<form action="/v1/quotation" method="post">
+    <fieldset>
+        <div class="form-group">
+            <label for="MSZoning">Residential Area:</label>
+            <select name="MSZoning" class="form-control col-md-6 mb-4" id="MSZoning" required>
+                <option  class="dropdown-item">Commercial</option>
+                <option  class="dropdown-item">Floating Village Residential</option>
+                <option  class="dropdown-item">Residential High Density</option>
+                <option  class="dropdown-item">Residential Low Density</option>
+                <option  class="dropdown-item">Residential Medium Density</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="LotArea">Lot Area:</label>
+            <input type="text" id="LotArea" name="LotArea" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="Street">Type of road access:</label>
+            <select name="Street" class="form-control col-md-6 mb-4" id="Street" required>
+                <option  class="dropdown-item">Gravel</option>
+                <option  class="dropdown-item">Paved</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="Utilities">Utilities:</label>
+            <select name="Utilities" class="form-control col-md-6 mb-4" id="Utilities" required>
+                <option  class="dropdown-item">All public Utilities (E,G,W,& S)</option>
+                <option  class="dropdown-item">Electricity and Gas Only</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="OverallCond">Condition of the house:</label>
+            <select name="OverallCond" class="form-control col-md-6 mb-4" id="OverallCond" required>
+                <option  value="1" class="dropdown-item">Very Poor</option>
+                <option  value="2" class="dropdown-item">Poor</option>
+                <option  value="3" class="dropdown-item">Fair</option>
+                <option  value="4" class="dropdown-item">Below Average	</option>
+                <option  value="5" class="dropdown-item">Average</option>
+                <option  value="6" class="dropdown-item">Above Average	</option>
+                <option  value="7" class="dropdown-item">Good</option>
+                <option  value="8" class="dropdown-item">Very Good</option>
+                <option  value="9" class="dropdown-item">Excellent</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="YearBuilt">Ano de construção:</label>
+            <input type="number" id="YearBuilt" name="YearBuilt" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="FullBath">Banheiro (s):</label>
+            <input type="number" id="FullBath" name="FullBath" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="BedroomAbvGr">Quarto (s):</label>
+            <input type="number" id="BedroomAbvGr" name="BedroomAbvGr" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="KitchenAbvGr">Cozinha (s):</label>
+            <input type="number" id="KitchenAbvGr" name="KitchenAbvGr" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="GarageCars">Vagas Garagem:</label>
+            <input type="number" id="GarageCars" name="GarageCars" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary btn-salvar">Avaliar</button>
+    </fieldset>
+</form>
+{% endblock %}
