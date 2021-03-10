@@ -17,7 +17,6 @@ def home():
 
 @app.route('/v1/quotation', methods=['POST'])
 def quotation():
-    
     data_input = [int(request.form[col]) for col in columns]
     print(data_input)
     price = lr_model.predict([data_input])[0]
