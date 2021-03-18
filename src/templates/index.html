@@ -1,70 +1,77 @@
-{% extends "template.html" %}
-{% block conteudo %}
-<form action="/v1/quotation" method="post">
-    <fieldset>
-        <div class="form-group">
-            <label for="MSZoning">Residential Area:</label>
-            <select name="MSZoning" class="form-control col-md-6 mb-4" id="MSZoning" required>
-                <option value="0" class="dropdown-item">Commercial</option>
-                <option value="1" class="dropdown-item">Floating Village Residential</option>
-                <option value="2" class="dropdown-item">Residential High Density</option>
-                <option value="3" class="dropdown-item">Residential Low Density</option>
-                <option value="4" class="dropdown-item">Residential Medium Density</option>
-            </select>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Housing Prices</title>
+</head>
+
+<body>
+    <header>
+    	<div class="content">
+    	<nav>
+			<p class="brand"><a href="{{ url_for('home') }}">Housing<strong> Prices</strong></a></p>
+			<ul>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+          </ul>
+            <img alt="logo" src="../static/logo1.png">
+          </nav>
+          <div class="header-block">
+          	<div class="text">
+                <h2>Are you moving to Ames-USA?</h2>
+                <h3>Fill the information below to get the price of your future house.</h3>
+          	</div>
+          </div>
+          </div>
+        </header>
+        <section class="formulario" id="formulario">
+			<div class="content">
+				<form action="/v1/quotation" method="post">
+                        <div class="form-group">
+                            <label for="LotArea"><strong>Lot Area (Square feet):</strong></label>
+                            <input type="number" id="LotArea" name="LotArea" class="form-control" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Street"><strong>Type of road access:</strong></label>
+                            <select name="Street" class="form-control" id="Street" required>
+                                <option value="0" class="dropdown-item">Gravel</option>
+                                <option value="1" class="dropdown-item">Paved</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="Utilities"><strong>Utilities:</strong></label>
+                            <select name="Utilities" class="form-control" id="Utilities" required>
+                                <option value="0" class="dropdown-item">All public Utilities (E,G,W,& S)</option>
+                                <option value="1" class="dropdown-item">Electricity and Gas Only</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="BedroomAbvGr"><strong>Bedrooms:</strong></label>
+                            <input type="number" id="BedroomAbvGr" name="BedroomAbvGr" class="form-control" min="0" required>
+                        </div>
+                    <button type="submit">Evaluate</button>
+                </form>
+			</div>
+		</section>
+<footer>
+    <div class="main">
+        <div class="content footer-instituto">
+        <ul>
+            <li><h4>Instituto Federal de São Paulo</h4></li>
+            <li><h6>Avenida Thereza Ana Cecon Breda, s/n - Vila São Pedro</h6></li>
+            <li><h6>Hortolândia-SP - Brasil - Cep: 13183-250</h6></li>
+            <li><h6>Phone: +55 19 3865-8070</h6></li>
+            <li><h6>Official website: hto.ifsp.edu.br</h6></li>
+        </ul>
         </div>
-        <div class="form-group">
-            <label for="LotArea">Lot Area:</label>
-            <input type="text" id="LotArea" name="LotArea" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="Street">Type of road access:</label>
-            <select name="Street" class="form-control col-md-6 mb-4" id="Street" required>
-                <option value="0" class="dropdown-item">Gravel</option>
-                <option value="1" class="dropdown-item">Paved</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="Utilities">Utilities:</label>
-            <select name="Utilities" class="form-control col-md-6 mb-4" id="Utilities" required>
-                <option value="0" class="dropdown-item">All public Utilities (E,G,W,& S)</option>
-                <option value="1" class="dropdown-item">Electricity and Gas Only</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="OverallCond">Condition of the house:</label>
-            <select name="OverallCond" class="form-control col-md-6 mb-4" id="OverallCond" required>
-                <option  value="1" class="dropdown-item">Very Poor</option>
-                <option  value="2" class="dropdown-item">Poor</option>
-                <option  value="3" class="dropdown-item">Fair</option>
-                <option  value="4" class="dropdown-item">Below Average	</option>
-                <option  value="5" class="dropdown-item">Average</option>
-                <option  value="6" class="dropdown-item">Above Average	</option>
-                <option  value="7" class="dropdown-item">Good</option>
-                <option  value="8" class="dropdown-item">Very Good</option>
-                <option  value="9" class="dropdown-item">Excellent</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="YearBuilt">Ano de construção:</label>
-            <input type="number" id="YearBuilt" name="YearBuilt" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="FullBath">Banheiro (s):</label>
-            <input type="number" id="FullBath" name="FullBath" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="BedroomAbvGr">Quarto (s):</label>
-            <input type="number" id="BedroomAbvGr" name="BedroomAbvGr" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="KitchenAbvGr">Cozinha (s):</label>
-            <input type="number" id="KitchenAbvGr" name="KitchenAbvGr" class="form-control" required>
-        </div>
-        <div class="form-group">
-            <label for="GarageCars">Vagas Garagem:</label>
-            <input type="number" id="GarageCars" name="GarageCars" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary btn-salvar">Avaliar</button>
-    </fieldset>
-</form>
-{% endblock %}
+    </div>
+    <div class="last">Artifical Intelligence - 6º Semester / Systems Analysis & Development</div>
+</footer>
+
+</body>
+
+</html>
+
+ 

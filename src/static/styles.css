@@ -1,0 +1,394 @@
+/* font importing */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+}
+
+:root {
+    --fundo: #026C51;
+    --letras:  #69C7AF;
+    --cinza:  #505052;
+    --claro:  #DEDEDE;
+    --escuro: #03241C;
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    width: 100%;
+    height: 400px;
+    background: var(--fundo);
+}
+
+.content {
+    max-width: 1000px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+.brand {
+    font-size: 65px;
+    color: var(--letras);
+    cursor: pointer;
+}
+
+nav {
+    width: 100%;
+    height: 125px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav p a{
+    text-decoration: none;
+    color: var(--letras);
+}
+
+nav p a:hover {
+    color: var(--escuro);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav ul li {
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: var(--letras);
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: var(--escuro);
+}
+
+img {
+    width: 8%;
+}
+
+.content .header-block {
+    max-width: 1000px;
+    background: var(--cinza);
+    min-width: 300px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.5) 1px 0px 10px 0px;
+    position: relative;
+    z-index: 10;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.header-block .text {
+    max-width: 960px;
+    min-width: 294px;
+}
+
+.header-block nav {
+    justify-content: space-evenly;
+}
+
+.text h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    margin: 90px 0px 0px;
+}
+
+.text h3 {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+    margin: 30px 0px 0px;
+}
+
+input {
+    font-size: 30px;
+    width: 100%;
+    text-align: left;
+}
+
+button {
+    cursor: pointer;
+    background: var(--fundo);
+    border: 1px solid var(--letras);
+    color: var(--letras);
+    font-weight: bold;
+    font-size: 25px;
+    padding: 8px 40px;
+    border-radius: 4px;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+button:hover {
+	transition: background, color 0.6s;
+	border-color: var(--escuro);
+    color: var(--escuro);
+}
+
+form {
+    width: 980px;
+    min-width: 200px;
+    position: relative;
+    z-index: 10;
+    font-size: 30px;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+
+form div .form-control {
+    width: 100%;
+    height: 40px;
+    margin: 0px 0px 30px 0px;
+    font-size: 20px;
+}
+
+div .form-control {
+    width: 980px;
+    height: 40px;
+    margin: 0px 0px 30px 0px;
+    font-size: 20px;
+}
+
+form .form-group {
+    width: 100%;
+    text-align: left;
+}
+
+div label {
+    padding-top: 15px;
+    font-size: 30px;
+}
+
+.formulario {
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+section .formulario-titulo {
+    padding-bottom: 20px;
+}
+
+section .formulario-info {
+    width: 980px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: 35px;
+    background: white;
+    border-radius: 8px;
+    margin: 0px auto;
+}
+
+section .formulario-info ul li {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+    margin: 15px 0px;
+}
+
+.value {
+    margin-top: 150px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+.price {
+    width: 980px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    background: var(--claro);
+    border-radius: 8px;
+    margin: 0px auto;
+}
+
+div div div .form-group {
+    width: 100%;
+    text-align: left;
+}
+
+textarea {
+    resize: none;
+ }
+
+ section .gustavo-titulo {
+    margin-top: 120px;
+    padding-bottom: 20px;
+}
+
+section .gustavo-info {
+    width: 980px;
+    height: 300px;
+    background: var(--claro);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: 35px;
+    border-radius: 8px;
+    margin: 0px auto;
+}
+
+section .gustavo-info ul li {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+    margin: 15px 0px;
+}
+
+.juan {
+    margin-top: 80px;
+    width: 100%;
+    height: 100%;
+    background: var(--claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0px;
+}
+
+section .juan-titulo {
+    padding-bottom: 20px;
+}
+
+section .juan-info {
+    width: 980px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: 35px;
+    background: white;
+    border-radius: 8px;
+    margin: 0px auto;
+}
+
+section .juan-info ul li {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+    margin: 15px 0px;
+}
+
+section .lais-titulo {
+    margin-top: 80px;
+    padding-bottom: 20px;
+}
+
+section .lais-info {
+    width: 980px;
+    height: 300px;
+    background: var(--claro);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    font-size: 35px;
+    border-radius: 8px;
+    margin: 0px auto;
+    margin-bottom: 80px;
+}
+
+section .lais-info ul li {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    list-style: none;
+    padding: 10px;
+    margin: 15px 0px;
+}
+
+footer {
+    width: 100%;
+    height: 250px;
+}
+
+footer .main {
+    width: 100%;
+    height: 200px;
+    background: var(--fundo);
+    padding: 20px 10px;
+}
+
+.footer-instituto {
+    max-width: 1000px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    color: var(--letras);
+    height: 100%;
+    min-height: 100px;
+}
+
+.footer-instituto {
+    margin-bottom: 8px;
+}
+
+.footer-instituto ul li {
+    text-align: center;
+    list-style: none;
+}
+
+.footer-instituto h4 {
+    margin-bottom: 10px;
+}
+
+.footer-instituto h6 {
+    margin-bottom: 5px;
+}
+
+footer .last {
+    width: 100%;
+    height: 50px;
+    color: var(--letras);
+    background: var(--cinza);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,8 +1,62 @@
-{% extends "template.html" %}
-{% block conteudo %}
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="form-group">
-    <label for="price">Price:</label>
-    <input value="{{ price }}" type="text" id="price" name="price" class="form-control" readonly>
-</div>
-{% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Housing Prices</title>
+</head>
+
+<body>
+    <header>
+        <div class="content">
+            <nav>
+                <p class="brand"><a href="{{ url_for('home') }}">Housing<strong> Prices</strong></a></p>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <img alt="logo" src="../static/logo1.png">
+            </nav>
+            <div class="header-block">
+                <div class="text">
+                    <h2>Are you moving to Ames-USA?</h2>
+                    <h3>Fill the information below to get the price of your future house.</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="value" id="value">
+        <div class="content">
+            <div class="price">
+                <div class="form-group">
+                    <label for="price"><strong>House Price:</strong> USD {{ price }}</label>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="main">
+            <div class="content footer-instituto">
+                <ul>
+                    <li>
+                        <h4>Instituto Federal de São Paulo</h4>
+                    </li>
+                    <li>
+                        <h6>Avenida Thereza Ana Cecon Breda, s/n - Vila São Pedro</h6>
+                    </li>
+                    <li>
+                        <h6>Hortolândia-SP - Brasil - Cep: 13183-250</h6>
+                    </li>
+                    <li>
+                        <li><h6>Phone: +55 19 3865-8070</h6></li>
+            <li><h6>Official website: hto.ifsp.edu.br</h6></li>
+        </ul>
+        </div>
+    </div>
+    <div class="last">Artifical Intelligence - 6º Semester / Systems Analysis & Development</div>
+    </footer>
+
+</body>
+
+</html>
